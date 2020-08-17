@@ -12,7 +12,7 @@ Authentication server using asymmetric
  
  Used Jdbc token store. Token generated store in database.
  
------------- Branch jwt -----------------------
+------------ Branch oauth2-server-jwt ------
  
  Used Jwt token store. Token generated store in memory.
  
