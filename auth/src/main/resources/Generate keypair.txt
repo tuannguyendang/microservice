@@ -1,0 +1,20 @@
+A. Generate JKS:
+	keytool -genkeypair -alias ms-oauth-server -keyalg RSA -keypass Nation@123 -keystore auth-server.jks -storepass Day@123
+
+	What is your first and last name?
+	  [Unknown]:  Tuan Nguyen
+	What is the name of your organizational unit?
+	  [Unknown]:  PTIT
+	What is the name of your organization?
+	  [Unknown]:  PTIT
+	What is the name of your City or Locality?
+	  [Unknown]:  Sai Gon
+	What is the name of your State or Province?
+	  [Unknown]:  Sai Gon
+	What is the two-letter country code for this unit?
+	  [Unknown]:  VN
+	Is CN=Tuan Nguyen, OU=PTIT, O=PTIT, L=Sai Gon, ST=Sai Gon, C=VN correct?
+B. Generate public key:
+	1. Download https://code.google.com/archive/p/openssl-for-windows/downloads
+	2. Get Private and Public Key: keytool -list -rfc --keystore auth-server.jks | "C:\openssl\bin\openssl.exe" x509 -inform pem -pubkey
+	3. Get public key only: keytool -list -rfc --keystore auth-server.jks | "C:\openssl\bin\openssl.exe" x509 -inform pem -pubkey -noout
