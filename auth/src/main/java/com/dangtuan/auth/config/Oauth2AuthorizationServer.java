@@ -22,8 +22,8 @@ import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.TokenStore;
-import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
+import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import org.springframework.security.rsa.crypto.KeyStoreKeyFactory;
 
 @Configuration
@@ -60,8 +60,6 @@ public class Oauth2AuthorizationServer extends AuthorizationServerConfigurerAdap
 
   @Override
   public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-//    JdbcClientDetailsService jdbcClientDetailsService = new JdbcClientDetailsService(dataSource);
-//    clients.withClientDetails(jdbcClientDetailsService);
     clients.jdbc(dataSource);
   }
 
@@ -71,9 +69,8 @@ public class Oauth2AuthorizationServer extends AuthorizationServerConfigurerAdap
     tokenEnhancerChain
         .setTokenEnhancers(Arrays.asList(customTokenEnhancer, accessTokenConverter()));
     endpoints.tokenStore(tokenStore())
-        .tokenEnhancer(tokenEnhancerChain)
-        .authenticationManager(authenticationManager)
-        .userDetailsService(userDetailsService);
+        .tokenEnhancer(tokenEnhancerChain).userDetailsService(userDetailsService)
+        .authenticationManager(authenticationManager);
   }
 
   @Bean
@@ -93,7 +90,7 @@ public class Oauth2AuthorizationServer extends AuthorizationServerConfigurerAdap
    */
   @Bean
   public TokenStore tokenStore() {
-    return new JdbcTokenStore(dataSource);
+    return new JwtTokenStore(accessTokenConverter());
   }
 
   @Bean

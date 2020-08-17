@@ -29,7 +29,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
     auth.jdbcAuthentication()
         .dataSource(dataSource);
-//    inMemorySetting(auth);
   }
 
   @Override
@@ -52,7 +51,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
    */
   @Bean
   public PasswordEncoder passwordEncoder() {
-//    return new BCryptPasswordEncoder(strength);
     PasswordEncoder defaultEncoder = new BCryptPasswordEncoder();
     Map<String, PasswordEncoder> encoders = new HashMap<>();
     encoders.put(Constants.BCRYPT, new BCryptPasswordEncoder(Constants.strength));
@@ -64,14 +62,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     return passworEncoder;
   }
 
-  /**
-   * Memory authentication for sample demo
-   *
-   * @param auth
-   * @throws Exception
-   */
-  private void inMemorySetting(AuthenticationManagerBuilder auth) throws Exception {
-    auth.inMemoryAuthentication().withUser("user").roles("SG_USER").password("123456")
-        .and().withUser("admin").roles("SG_ADMIN").password("123456");
-  }
 }
