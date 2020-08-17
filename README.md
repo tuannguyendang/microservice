@@ -2,6 +2,18 @@
 Microservice Authorization server - Resource Server - Gateway
 
 # Oauth2 server
- ------------ JDBC -----------------
- ------------ JWT ------------------
+
+Authentication server using asymmetric
+
+- Import database
+- Generate keypair
+
+------------ Branch Master -----------------
+ 
+ Used Jdbc token store. Token generated store in database.
+ 
+------------ Branch jwt -----------------------
+ 
+ Used Jwt token store. Token generated store in memory.
+ 
 # Resource server
