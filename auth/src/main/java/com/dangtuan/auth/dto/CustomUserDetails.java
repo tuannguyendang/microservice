@@ -2,7 +2,6 @@ package com.dangtuan.auth.dto;
 
 import java.util.Collection;
 import java.util.Set;
-import javax.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -42,25 +41,25 @@ public class CustomUserDetails implements UserDetails {
 
   @Override
   public boolean isAccountNonExpired() {
-    log.info("accountExpired {} ", this.accountExpired);
+    log.debug("accountExpired {} ", this.accountExpired);
     return !this.accountExpired;
   }
 
   @Override
   public boolean isAccountNonLocked() {
-    log.info("accountLocked {} ", this.accountLocked);
+    log.debug("accountLocked {} ", this.accountLocked);
     return !this.accountLocked;
   }
 
   @Override
   public boolean isCredentialsNonExpired() {
-    log.info("credentialsExpired {} ", this.credentialsExpired);
+    log.debug("credentialsExpired {} ", this.credentialsExpired);
     return !this.credentialsExpired;
   }
 
   @Override
   public boolean isEnabled() {
-    log.info("enabled {} ", this.enabled);
+    log.debug("enabled {} ", this.enabled);
     return this.enabled;
   }
 }

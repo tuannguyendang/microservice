@@ -1,6 +1,7 @@
 package com.dangtuan.auth.config;
 
 import com.dangtuan.auth.properties.AuthProperties;
+import com.dangtuan.auth.util.constants.Constants;
 import java.util.HashMap;
 import java.util.Map;
 import javax.sql.DataSource;
@@ -17,9 +18,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
-  private static final int strength = 4;
-  private static final String BCRYPT = "bcrypt";
 
   @Autowired
   private AuthProperties authProperties;
@@ -47,22 +45,27 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     return super.authenticationManagerBean();
   }
 
+  /**
+   * Config will append prefix for password generated
+   *
+   * @return PasswordEncoder
+   */
   @Bean
   public PasswordEncoder passwordEncoder() {
 //    return new BCryptPasswordEncoder(strength);
     PasswordEncoder defaultEncoder = new BCryptPasswordEncoder();
     Map<String, PasswordEncoder> encoders = new HashMap<>();
-    encoders.put(BCRYPT, new BCryptPasswordEncoder());
+    encoders.put(Constants.BCRYPT, new BCryptPasswordEncoder(Constants.strength));
 
     DelegatingPasswordEncoder passworEncoder = new DelegatingPasswordEncoder(
-        BCRYPT, encoders);
+        Constants.BCRYPT, encoders);
     passworEncoder.setDefaultPasswordEncoderForMatches(defaultEncoder);
 
     return passworEncoder;
   }
 
   /**
-   * Memory authentication
+   * Memory authentication for sample demo
    *
    * @param auth
    * @throws Exception

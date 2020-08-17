@@ -1,6 +1,7 @@
 package com.dangtuan.auth.config;
 
 import com.dangtuan.auth.properties.AuthProperties;
+import com.dangtuan.auth.util.constants.Constants;
 import java.security.KeyPair;
 import java.util.Arrays;
 import javax.sql.DataSource;
@@ -23,15 +24,12 @@ import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
-import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import org.springframework.security.rsa.crypto.KeyStoreKeyFactory;
 
 @Configuration
 @EnableAuthorizationServer
 public class Oauth2AuthorizationServer extends AuthorizationServerConfigurerAdapter {
 
-  private static final String PERMIT_ALL = "permitAll()";
-  private static final String IS_AUTHENTICATED = "isAuthenticated()";
   @Autowired
   private DataSource dataSource;
 
@@ -56,7 +54,7 @@ public class Oauth2AuthorizationServer extends AuthorizationServerConfigurerAdap
    */
   @Override
   public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-    security.tokenKeyAccess(PERMIT_ALL).checkTokenAccess(IS_AUTHENTICATED)
+    security.tokenKeyAccess(Constants.PERMIT_ALL).checkTokenAccess(Constants.IS_AUTHENTICATED)
         .allowFormAuthenticationForClients();
   }
 
@@ -95,7 +93,6 @@ public class Oauth2AuthorizationServer extends AuthorizationServerConfigurerAdap
    */
   @Bean
   public TokenStore tokenStore() {
-//    return new JwtTokenStore(accessTokenConverter());
     return new JdbcTokenStore(dataSource);
   }
 

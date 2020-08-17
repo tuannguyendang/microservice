@@ -1,5 +1,6 @@
 package com.dangtuan.auth.entity;
 
+import com.dangtuan.auth.util.constants.EntityConstants;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -15,17 +16,17 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "users")
+@Table(name = EntityConstants.USERS_TABLE)
 public class User implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
 
-  @Column(name = "username")
+  @Column(name = EntityConstants.USER_NAME)
   private String userName;
 
-  @Column(name = "password")
+  @Column(name = EntityConstants.PASSWORD)
   private String password;
 
   @Column

@@ -1,10 +1,11 @@
 package com.dangtuan.auth.properties;
 
+import com.dangtuan.auth.util.constants.Constants;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-@ConfigurationProperties("app")
+@ConfigurationProperties(Constants.CONFIGURATION_PROPERTIES)
 @Component
 @Data
 public class AuthProperties {

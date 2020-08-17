@@ -1,5 +1,6 @@
 package com.dangtuan.auth.config;
 
+import com.dangtuan.auth.util.constants.Constants;
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,19 +16,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class CustomTokenEnhancer extends JwtAccessTokenConverter {
 
-  private static final String CUSTOM_INFO = "customInfo";
-  private static final String AUTHORITIES = "authorities";
-  private static final String USER_NAME = "userName";
-
   @Override
   public OAuth2AccessToken enhance(OAuth2AccessToken accessToken,
       OAuth2Authentication authentication) {
     UserDetails userDetails = (UserDetails) authentication.getPrincipal();
 
     final Map<String, Object> additionalInfo = new HashMap<>();
-    additionalInfo.put(CUSTOM_INFO, "tuan nguyen auth server");
-    additionalInfo.put(AUTHORITIES, userDetails.getAuthorities());
-    additionalInfo.put(USER_NAME, userDetails.getUsername());
+    additionalInfo.put(Constants.CUSTOM_INFO, Constants.MY_INFO);
+    additionalInfo.put(Constants.AUTHORITIES, userDetails.getAuthorities());
+    additionalInfo.put(Constants.USER_NAME, userDetails.getUsername());
 
     ((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(additionalInfo);
 
