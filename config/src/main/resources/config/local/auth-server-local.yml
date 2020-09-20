@@ -1,0 +1,50 @@
+server:
+  port: 8763
+  servlet:
+    context-path: /auth-server
+    max-http-header-size: 61440
+    tomcat:
+      max-http-post-size: 5MB
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/oauth_server_db?serverTimezone=UTC
+    username: root
+    password:
+  jpa:
+    show-sql: true
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: none
+
+ribbon:
+  connectTimeout: 10000
+  readTimeout: 10000
+logging:
+  file: ./logs/auth-server.log
+  level:
+    org:
+      springframework:
+        cloud: debug
+        web: debug
+        security: debug
+    com:
+      dangtuan: debug
+
+app:
+  token-key-alias: ms-oauth-server
+  token-key-store: auth-server.jks
+  token-key-store-pass: Day@123
+  token-key-pair-pass: Nation@123
+
+  allowed-endpoints:
+    - /oauth/**
+    - /actuator/**

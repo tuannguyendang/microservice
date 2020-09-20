@@ -1,0 +1,84 @@
+server:
+  port: 8762
+  servlet:
+    max-http-header-size: 61440
+    tomcat:
+      max-http-post-size: 5MB
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+zuul:
+  host:
+    connect-timeout-millis: 16000000
+    socket-timeout-millis: 16000000
+  ignoredServices: '*'
+  routes:
+    ## auth-server router
+    auth-server:
+      path: /auth/**
+      serviceId: demo-auth-server
+      url: http://localhost:8763/auth-server
+      stripPrefix: true
+    ## services router
+    resource-service:
+      path: /service1/**
+      serviceId: resource-service
+      url: http://localhost:8764/resource-server
+      stripPrefix: true
+    order-service:
+      path: /service2/**
+      serviceId: order-service
+      url: http://localhost:8765/order-service
+      stripPrefix: true
+    delivery-service:
+      path: /service3/**
+      serviceId: delivery-service
+      url: http://localhost:8766/delivery-service
+      stripPrefix: true
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 16000000
+        readTimeout: 1600000
+
+ribbon:
+  connectTimeout: 10000
+  readTimeout: 10000
+
+cors:
+  allowed:
+    origins:
+      - http://localhost:4200
+      - http://localhost:8080
+    headers:
+      - Content-Type
+      - Accept
+    methods:
+      - POST
+      - GET
+      - PUT
+      - OPTIONS
+      - DELETE
+logging:
+  file: ./logs/demo-gateway.log
+  level:
+    feign: debug
+    org:
+      springframework:
+        cloud: debug
+        web: debug
+        security: debug
+    com:
+      dangtuan: debug
+
+app:
+  cors:
+    origins:
+      - chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop
