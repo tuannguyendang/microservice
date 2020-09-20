@@ -1,0 +1,6 @@
+rootProject.name = 'common'
+
+include 'common-dto'
+include 'common-entity'
+include 'common-resource'
+include 'common-util'

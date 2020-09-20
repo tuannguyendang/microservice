@@ -1,0 +1,19 @@
+archivesBaseName = 'common'
+group = 'com.dangtuan'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+dependencies {
+    implementation 'com.auth0:java-jwt:3.8.2'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.3.2.RELEASE'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-core:9.0.37'
+    implementation 'org.springframework.cloud:spring-cloud-starter-oauth2:2.2.2.RELEASE'
+    compile('org.apache.commons:commons-lang3:3.10')
+    compile 'commons-io:commons-io:2.7'
+    compile 'javax.inject:javax.inject:1'
+    compileOnly 'org.projectlombok:lombok:1.18.12'
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
