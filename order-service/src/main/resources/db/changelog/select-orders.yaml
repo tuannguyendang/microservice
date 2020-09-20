@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: select-orders
+      author: TuanNguyen
+      comment: Select orders
+      changes:
+        - sqlFile:
+            encoding: utf8
+            endDelimiter: \nGO
+            path: sql/select-order.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true

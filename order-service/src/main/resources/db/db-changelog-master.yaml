@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: classpath:/db/changelog/create-orders-table.yaml
+  - include:
+      file: classpath:/db/changelog/select-orders.yaml

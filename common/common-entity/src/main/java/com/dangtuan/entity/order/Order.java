@@ -9,7 +9,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @Entity
 @Table(name = "order")
-@EqualsAndHashCode(callSuper=false)
+@EqualsAndHashCode(callSuper = false)
 public class Order extends BaseEntity {
 
   private Long amount;

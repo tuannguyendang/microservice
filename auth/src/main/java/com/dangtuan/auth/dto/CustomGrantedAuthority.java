@@ -8,7 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
  */
 public class CustomGrantedAuthority implements GrantedAuthority, Serializable {
 
-  private String name;
+  private final String name;
 
   public CustomGrantedAuthority(String name) {
     this.name = name;

@@ -1,7 +1,7 @@
 package com.dangtuan.common.dto;
 
-import com.dangtuan.common.util.TokenHelper;
 import com.dangtuan.common.exception.UnauthorizedException;
+import com.dangtuan.common.util.TokenHelper;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.IOException;
 import lombok.AllArgsConstructor;
