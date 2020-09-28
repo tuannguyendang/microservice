@@ -28,7 +28,6 @@ public class CustomTokenExtractor implements TokenExtractor {
   @Autowired
   private Provider<UserSession> userInfoProvider;
 
-  private final String TOKEN_INFORMATION_INVALID = "Token input empty";
   public static final String AUTHORIZATION = "Authorization";
 
   @Override
@@ -56,6 +55,7 @@ public class CustomTokenExtractor implements TokenExtractor {
       final UserSession user = userInfoProvider.get();
       user.setUserSession(token);
     } catch (Exception ex) {
+      log.error("Fail passer user information : {}", ex.getMessage());
       return;
     }
   }

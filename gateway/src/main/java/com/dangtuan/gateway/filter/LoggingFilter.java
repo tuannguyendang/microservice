@@ -29,7 +29,7 @@ public class LoggingFilter extends ZuulFilter {
   @Override
   public Object run() throws ZuulException {
     HttpServletRequest request = RequestContext.getCurrentContext().getRequest();
-    log.info("Request -> {} with request URL: {}", request, request.getRequestURL());
+    log.info("Request -> {} with request URL: {}, header: {}", request, request.getRequestURL(), request.getHeader("Authorization"));
     return null;
   }
 }

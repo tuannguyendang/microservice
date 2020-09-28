@@ -1,8 +1,8 @@
-package com.dangtuan.common.config;
+package com.dangtuan.order.config;
 
-import com.dangtuan.common.dto.MatcherMappingDto;
-import com.dangtuan.common.properties.AuthProperties;
-import com.dangtuan.common.service.MatcherService;
+import com.dangtuan.order.dto.MatcherMappingDto;
+import com.dangtuan.order.properties.AuthProperties;
+import com.dangtuan.order.service.MatcherService;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
@@ -71,8 +71,8 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
   @Override
   public void configure(HttpSecurity http) throws Exception {
     List<MatcherMappingDto> matchers = matcherService.getMatchers();
-    http.httpBasic().disable().anonymous().and().authorizeRequests()
-        .antMatchers(authProperties.getAllowedEndpoints()).permitAll();
+    http.httpBasic().disable().anonymous().and()
+        .authorizeRequests().antMatchers(authProperties.getAllowedEndpoints()).permitAll();
     for (MatcherMappingDto matcher : matchers) {
       http.authorizeRequests()
           .antMatchers(HttpMethod.valueOf(matcher.getMethodType()), matcher.getEndpoint())

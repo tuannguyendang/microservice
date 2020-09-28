@@ -1,7 +1,7 @@
 package com.dangtuan.resource.service.config;
 
-import com.dangtuan.resource.service.AuthProperties;
 import com.dangtuan.resource.service.dto.MatcherMappingDto;
+import com.dangtuan.resource.service.properties.AuthProperties;
 import com.dangtuan.resource.service.service.MatcherService;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -73,10 +73,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     List<MatcherMappingDto> matchers = matcherService.getMatchers();
     http.httpBasic().disable().anonymous().and().authorizeRequests()
         .antMatchers(authProperties.getAllowedEndpoints()).permitAll();
-//        .authorizeRequests().antMatchers(PUBLIC_URL).permitAll()
-//        .antMatchers(ACTUATOR_URL).permitAll();
     for (MatcherMappingDto matcher : matchers) {
-//			http.authorizeRequests().antMatchers(matcher.getEndpoint()).access("hasAuthority('" + matcher.getAuthority() + "') AND #oauth2.hasAnyScope('read')");
       http.authorizeRequests()
           .antMatchers(HttpMethod.valueOf(matcher.getMethodType()), matcher.getEndpoint())
           .access("hasAuthority('" + matcher.getAuthority() + "')");

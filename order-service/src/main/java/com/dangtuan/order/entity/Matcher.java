@@ -1,6 +1,5 @@
-package com.dangtuan.common.entity;
+package com.dangtuan.order.entity;
 
-import com.dangtuan.common.util.constants.EntityConstants;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,7 +11,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = EntityConstants.MATCHER)
+@Table(name = "matcher")
 public class Matcher {
 
   @Id
@@ -20,7 +19,7 @@ public class Matcher {
   private Long id;
 
   @ManyToOne
-  @JoinColumn(name = EntityConstants.AUTH_ID)
+  @JoinColumn(name = "auth_id")
   private Authority authority;
 
   private String endpoint;

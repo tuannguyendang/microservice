@@ -1,6 +1,5 @@
-package com.dangtuan.common.dto;
+package com.dangtuan.order.dto;
 
-import com.dangtuan.common.util.constants.CommonConstants;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
@@ -9,9 +8,9 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserDetails {
 
-  @JsonProperty(CommonConstants.CLIENT_ID)
+  @JsonProperty("client_id")
   private String tenantId;
-  @JsonProperty(CommonConstants.USER_NAME)
+  @JsonProperty("user_name")
   private String userName;
   private String[] scope;
   private String customInfo;

@@ -1,6 +1,5 @@
-package com.dangtuan.common.entity;
+package com.dangtuan.order.entity;
 
-import com.dangtuan.common.util.constants.EntityConstants;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +12,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = EntityConstants.AUTHORITY)
+@Table(name = "authority")
 public class Authority {
 
   @Id
@@ -23,6 +22,6 @@ public class Authority {
   @Column(length = 20)
   private String name;
 
-  @OneToMany(mappedBy = EntityConstants.AUTHORITY)
+  @OneToMany(mappedBy = "authority")
   private List<Matcher> matchers;
 }

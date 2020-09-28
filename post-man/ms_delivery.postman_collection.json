@@ -1,0 +1,22 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ms_delivery",
+		"_postman_id": "2ec6bc40-c0ce-79f9-f765-4a6f5cc6626f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8762/service3/v1/delivery",
+			"request": {
+				"url": "localhost:8762/service3/v1/delivery",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

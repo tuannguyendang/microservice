@@ -1,6 +1,6 @@
-package com.dangtuan.common.config;
+package com.dangtuan.order.config;
 
-import com.dangtuan.common.dto.UserSession;
+import com.dangtuan.order.dto.UserSession;
 import java.util.Enumeration;
 import javax.inject.Provider;
 import javax.servlet.http.HttpServletRequest;
