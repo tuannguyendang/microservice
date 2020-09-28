@@ -38,3 +38,7 @@ Authentication server using asymmetric
 ## Database
 - MySQL
 - Database per service
+- Transaction rollback following Sagas pattern
+
+## Event driven
+- using Kafka or Rest : not done yet
