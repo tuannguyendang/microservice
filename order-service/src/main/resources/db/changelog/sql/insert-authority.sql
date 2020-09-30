@@ -1,6 +1,5 @@
 INSERT INTO authority (name) VALUES
-('ROLE_ADMIN')
-,('ROLE_CLIENT')
-,('ROLE_MANAGER')
-,('ROLE_USER')
-;
+('ADMIN')
+,('CLIENT')
+,('MANAGER')
+,('USER');

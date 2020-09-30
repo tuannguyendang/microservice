@@ -71,7 +71,7 @@ CREATE TABLE `databasechangelog` (
 
 LOCK TABLES `databasechangelog` WRITE;
 /*!40000 ALTER TABLE `databasechangelog` DISABLE KEYS */;
-INSERT INTO `databasechangelog` VALUES ('create-orders-table','TuanNguyen','classpath:/db/changelog/create-orders-table.yaml','2020-09-06 18:37:05',1,'EXECUTED','8:83743c3e55abd002960d735b5052f5d6','createTable tableName=orders','Create orders table',NULL,'3.10.0',NULL,NULL,'9388625131'),('select-orders','TuanNguyen','classpath:/db/changelog/select-orders.yaml','2020-09-06 18:37:05',2,'EXECUTED','8:8b65af965ebc7bbe3967e8891d2cf855','sqlFile','Select orders',NULL,'3.10.0',NULL,NULL,'9388625131'),('insert master table authority','TuanNguyen','classpath:/db/changelog/insert-authority.yaml','2020-09-27 12:15:09',3,'EXECUTED','8:d3f6887b0981ae2dd3f2ee74918b7a16','sqlFile','insert master table authority',NULL,'3.10.0',NULL,NULL,'1180109480'),('insert role base access control','TuanNguyen','classpath:/db/changelog/insert-matcher.yaml','2020-09-27 12:15:09',4,'EXECUTED','8:3162e39d9b6542f20679844091cfe4c9','sqlFile','insert role base access control',NULL,'3.10.0',NULL,NULL,'1180109480');
+INSERT INTO `databasechangelog` VALUES ('create-orders-table','TuanNguyen','classpath:/db/changelog/create-orders-table.yaml','2020-09-30 11:26:10',1,'EXECUTED','8:852b2a30b3972fb413169e003e76980c','createTable tableName=orders','Create orders table',NULL,'3.10.0',NULL,NULL,'1436370125'),('select-orders','TuanNguyen','classpath:/db/changelog/select-orders.yaml','2020-09-30 11:26:10',2,'EXECUTED','8:8b65af965ebc7bbe3967e8891d2cf855','sqlFile','Select orders',NULL,'3.10.0',NULL,NULL,'1436370125'),('insert master table authority','TuanNguyen','classpath:/db/changelog/insert-authority.yaml','2020-09-30 11:26:10',3,'EXECUTED','8:3fa21fca1161862b0bdbee8f2c9a2d60','sqlFile','insert master table authority',NULL,'3.10.0',NULL,NULL,'1436370125'),('insert role base access control','TuanNguyen','classpath:/db/changelog/insert-matcher.yaml','2020-09-30 11:26:10',4,'EXECUTED','8:3162e39d9b6542f20679844091cfe4c9','sqlFile','insert role base access control',NULL,'3.10.0',NULL,NULL,'1436370125');
 /*!40000 ALTER TABLE `databasechangelog` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,7 +124,7 @@ CREATE TABLE `matcher` (
 
 LOCK TABLES `matcher` WRITE;
 /*!40000 ALTER TABLE `matcher` DISABLE KEYS */;
-INSERT INTO `matcher` VALUES (1,'/v1/order/*','GET',4),(2,'/v1/order/*','PUT',4),(3,'/v1/order','POST',4),(4,'/v1/order/*','DELETE',4);
+INSERT INTO `matcher` VALUES (1,'/v1/order','GET',4),(2,'/v1/order','PUT',4),(3,'/v1/order','POST',4),(4,'/v1/order','DELETE',4);
 /*!40000 ALTER TABLE `matcher` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -137,10 +137,10 @@ DROP TABLE IF EXISTS `orders`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `orders` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `tenant_id` bigint(20) NOT NULL,
+  `tenant_id` varchar(255) NOT NULL,
   `created_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `created_by` bigint(20) NOT NULL,
-  `updated_by` bigint(20) DEFAULT NULL,
+  `created_by` varchar(255) NOT NULL,
+  `updated_by` varchar(255) DEFAULT NULL,
   `updated_date` timestamp NULL DEFAULT NULL,
   `deleted` bit(1) DEFAULT b'0',
   `amount` int(11) NOT NULL,
@@ -171,4 +171,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-09-28 12:20:34
+-- Dump completed on 2020-09-30 11:32:35

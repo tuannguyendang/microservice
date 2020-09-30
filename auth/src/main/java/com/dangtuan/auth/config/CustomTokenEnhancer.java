@@ -29,7 +29,6 @@ public class CustomTokenEnhancer extends JwtAccessTokenConverter {
         .map(auth -> auth.getAuthority())
         .collect(Collectors.toSet());
     additionalInfo.put(Constants.AUTHORITIES, authorities);
-    additionalInfo.put(Constants.USER_NAME, userDetails.getUsername());
 
     ((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(additionalInfo);
 

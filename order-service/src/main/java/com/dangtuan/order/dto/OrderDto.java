@@ -13,7 +13,7 @@ public class OrderDto {
 
   private BigDecimal price;
 
-  private Long tenantId;
+  private String tenantId;
 
   private Boolean deleted;
 
@@ -21,8 +21,8 @@ public class OrderDto {
 
   private Date updatedDate;
 
-  private Long createdBy;
+  private String createdBy;
 
-  private Long updatedBY;
+  private String updatedBY;
 
 }

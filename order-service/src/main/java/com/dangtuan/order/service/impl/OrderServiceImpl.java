@@ -2,12 +2,14 @@ package com.dangtuan.order.service.impl;
 
 import com.dangtuan.order.constants.ApplicationConstants;
 import com.dangtuan.order.dto.OrderDto;
+import com.dangtuan.order.dto.UserSession;
 import com.dangtuan.order.entity.Order;
 import com.dangtuan.order.exception.OrderNotFoundException;
 import com.dangtuan.order.mapper.OrderMapper;
 import com.dangtuan.order.repository.OrderRepository;
 import com.dangtuan.order.service.OrderService;
 import java.util.Optional;
+import javax.inject.Provider;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +20,9 @@ public class OrderServiceImpl implements OrderService {
 
   @Autowired
   private OrderRepository orderRepository;
+
+  @Autowired
+  Provider<UserSession> userSessionProvider;
 
   @Override
   public OrderDto getOrder(final Long id) throws OrderNotFoundException {
@@ -31,7 +36,9 @@ public class OrderServiceImpl implements OrderService {
 
   @Override
   public OrderDto createOrder(final OrderDto orderDto) {
+    final UserSession userSession = userSessionProvider.get();
     final Order order = OrderMapper.INSTANCE.mapToOrder(orderDto);
+    order.setTenantId(userSession.getTenantId());
     this.orderRepository.save(order);
     return OrderMapper.INSTANCE.mapToOrderDto(order);
   }
@@ -39,9 +46,11 @@ public class OrderServiceImpl implements OrderService {
   @Override
   public OrderDto updateOrder(final OrderDto orderDto, final Long id) {
     final Optional<Order> orderOptional = this.orderRepository.findById(id);
+    final UserSession userSession = userSessionProvider.get();
     if (orderOptional.isPresent()) {
       final Order order = orderOptional.get();
       OrderMapper.INSTANCE.mapToUpdate(orderDto, order);
+      order.setTenantId(userSession.getTenantId());
       this.orderRepository.save(order);
       return orderDto;
     }

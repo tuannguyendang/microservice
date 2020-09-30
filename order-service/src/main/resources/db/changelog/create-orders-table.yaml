@@ -17,7 +17,7 @@ databaseChangeLog:
                   type: BIGSERIAL
               - column:
                   name: tenant_id
-                  type: bigint
+                  type: varchar(255)
                   constraints:
                     nullable: false
               - column:
@@ -29,12 +29,12 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                   name: created_by
-                  type: bigint
+                  type: varchar(255)
               - column:
                   constraints:
                     nullable: true
                   name: updated_by
-                  type: bigint
+                  type: varchar(255)
               - column:
                   constraints:
                     nullable: true

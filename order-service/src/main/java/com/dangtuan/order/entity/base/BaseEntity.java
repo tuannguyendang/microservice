@@ -33,7 +33,7 @@ public class BaseEntity implements Serializable {
   private Boolean deleted;
 
   @Column(name = EntityConstants.TENANT_ID, nullable = false)
-  private Long tenantId;
+  private String tenantId;
 
   @Temporal(TemporalType.TIMESTAMP)
   @Column(name = EntityConstants.CREATED_DATE, nullable = false, updatable = false)
@@ -47,11 +47,11 @@ public class BaseEntity implements Serializable {
 
   @Column(name = EntityConstants.CREATED_BY)
   @CreatedBy
-  private Long createdBy;
+  private String createdBy;
 
   @Column(name = EntityConstants.UPDATED_BY)
   @LastModifiedBy
-  private Long updatedBy;
+  private String updatedBy;
 
   @PrePersist
   public void prePersist() {

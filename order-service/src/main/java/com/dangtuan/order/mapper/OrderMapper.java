@@ -17,10 +17,15 @@ public interface OrderMapper {
 
   OrderDto mapToOrderDto(final Order order);
 
+  @Mappings({
+      @Mapping(target = ApplicationConstants.ID, ignore = true),
+      @Mapping(target = ApplicationConstants.TENANT_ID, ignore = true)
+  })
   Order mapToOrder(OrderDto orderDto);
 
-  @Mappings(
-      @Mapping(target = ApplicationConstants.ID, ignore = true)
-  )
+  @Mappings({
+      @Mapping(target = ApplicationConstants.ID, ignore = true),
+      @Mapping(target = ApplicationConstants.TENANT_ID, ignore = true)
+  })
   void mapToUpdate(OrderDto orderDto, @MappingTarget Order order);
 }
