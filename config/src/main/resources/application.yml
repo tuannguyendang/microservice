@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: classpath:/config/local/
+server:
+  port: 8760
+  servlet:
+    context-path: /config-server
+logging:
+  file: ./logs/config-server.log
+  level:
+    feign: debug
+    org:
+      springframework:
+        cloud: debug
+        web: debug
+        security: debug

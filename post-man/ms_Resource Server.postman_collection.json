@@ -1,0 +1,79 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ms_Resource Server",
+		"_postman_id": "9e958e93-f882-30a7-a81d-5e89047fdc27",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8764/resource-server/user/profile",
+			"request": {
+				"url": "localhost:8764/resource-server/user/profile",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJ1c2VyIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImN1c3RvbUluZm8iOiJ0dWFuIG5ndXllbiBhdXRoIHNlcnZlciIsImV4cCI6MTYwMTE5NjYzNiwidXNlck5hbWUiOiJ1c2VyIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwianRpIjoiMDg5NjQ2YjMtNzdiNS00MWRiLTlhYjMtZjAyOWVkZTI4YjVlIiwiY2xpZW50X2lkIjoiY2xpZW50SWQifQ.RT61rFlIKeM1IrWy_UywH-x24DFyV1cp6u0KAEXRe1gw8Lf4fmQxu21EXp5SaaHL6uNUjKucbPZPFhbRJgjTW10KxuKulx_KklWqLRi8TquQ5qldkCDn5uWBXKil2w6jt6QANvWhUN-NCS-1EoimS5cHfVzurmTEDs55T12drQy8ZIs-coPehMrL5aSJQSmUn6lzcEoWfyjpox2pCqCrkuNvmW3noqjNmfOGTG_KnH75gTqJB034TGgniJEAEt8nxDLTH2bbomi3uU03shjrmj9JENRZzG6HMOoE9ASRljxQ-WlPizNqwsYopF8z158ypw8gua5tNSuka_krNSByvw",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8764/resource-server/user/profile",
+			"request": {
+				"url": "localhost:8764/resource-server/v1/user/profile",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJ1c2VyIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImN1c3RvbUluZm8iOiJ0dWFuIG5ndXllbiBhdXRoIHNlcnZlciIsImV4cCI6MTYwMTI2NTA5MCwidXNlck5hbWUiOiJ1c2VyIiwiYXV0aG9yaXRpZXMiOlsiVVNFUiJdLCJqdGkiOiI3NWRhOTBmMy0xZTJmLTRjMjUtYmJjYi0wM2FjZDYzOGM5NDYiLCJjbGllbnRfaWQiOiJjbGllbnRJZCJ9.Gu5u8xktP9BQq6r-ztYOWT5-x0mO6RtQ-ZujwCxvzo_Zs4FYAdCVNq_6aZ0mP7dfXljW3L-1-6Axy6oQCKkZIHuA_zIYxqM3LEiQTo48thxO88OyIwdzqUCN8IvXljVdzBSbaxBxuhAygDOkXf-yyG8LBM5t2VaVjkUL9iF0DwQoTI6UubsVgpqkbKJu3FIH9QKrY3trJXokgbGboJ5fUebLlUy_xvDThfF26t50SXyHA0qupd746cRr2iW8MMprQpDuyxK6ZBi2Q2b2zlTaILgw6RPDDz5uY_71VvZOomPRtB42xhd_uI7nTqFy3BkFWJJ3zPhZWXNpYEcKc_WAQA",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "call Resource Server api through gateway",
+			"request": {
+				"url": "localhost:8762/service1/v1/user/profile",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJ1c2VyIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImN1c3RvbUluZm8iOiJ0dWFuIG5ndXllbiBhdXRoIHNlcnZlciIsImV4cCI6MTYwMTI2NTA5MCwidXNlck5hbWUiOiJ1c2VyIiwiYXV0aG9yaXRpZXMiOlsiVVNFUiJdLCJqdGkiOiI3NWRhOTBmMy0xZTJmLTRjMjUtYmJjYi0wM2FjZDYzOGM5NDYiLCJjbGllbnRfaWQiOiJjbGllbnRJZCJ9.Gu5u8xktP9BQq6r-ztYOWT5-x0mO6RtQ-ZujwCxvzo_Zs4FYAdCVNq_6aZ0mP7dfXljW3L-1-6Axy6oQCKkZIHuA_zIYxqM3LEiQTo48thxO88OyIwdzqUCN8IvXljVdzBSbaxBxuhAygDOkXf-yyG8LBM5t2VaVjkUL9iF0DwQoTI6UubsVgpqkbKJu3FIH9QKrY3trJXokgbGboJ5fUebLlUy_xvDThfF26t50SXyHA0qupd746cRr2iW8MMprQpDuyxK6ZBi2Q2b2zlTaILgw6RPDDz5uY_71VvZOomPRtB42xhd_uI7nTqFy3BkFWJJ3zPhZWXNpYEcKc_WAQA",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET through gateway",
+			"request": {
+				"url": "localhost:8762/service1/v1/user/profile",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJ1c2VyIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImN1c3RvbUluZm8iOiJ0dWFuIG5ndXllbiBhdXRoIHNlcnZlciIsImV4cCI6MTYwMTI2OTAyMiwidXNlck5hbWUiOiJ1c2VyIiwiYXV0aG9yaXRpZXMiOlsiVVNFUiJdLCJqdGkiOiIwZjhkZTk4Yi01OTM0LTQ2OGMtYWIyMS1iOGZiMGI4ZGIxNjQiLCJjbGllbnRfaWQiOiJjbGllbnRJZCJ9.hZjYhW_0vME8Zw8rjcsD4_N5g21Yde1_vYPyY3KEB2oN8_lVoos7Qf8zMwjMWwChcPg5pZr57ORTitiXXI8bj42ZNc7Y0XJL_yZWEw_MNrEtRmTmkSfWKar9ujwoX0lGiRC88temtTsnexD15NJdTeyKaki17_V7qTVAwUepIBzS38JA9s5i4DQqhGLmB78dPDjVvO_4Rhv3ZQdTkNXM0G0hWS7Et6OCxUas7VfGDqsbb6ag5XReRBIgesrijdmafOR53Yt_bw8V_2hCZjNu9oGk0PwZBUzKCnzKdKIeXMjJtZsapfsyHXMzIXu_YUqdzsHJOO4XD7vllt61Log5Yw",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

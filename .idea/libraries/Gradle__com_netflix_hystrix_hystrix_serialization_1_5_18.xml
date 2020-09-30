@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.netflix.hystrix:hystrix-serialization:1.5.18">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.hystrix/hystrix-serialization/1.5.18/9767e5dfa25c7972bd3131ba7df2de207a70626b/hystrix-serialization-1.5.18.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.hystrix/hystrix-serialization/1.5.18/a5ddc284a027253f3cf3d59308f7e74571862e01/hystrix-serialization-1.5.18-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

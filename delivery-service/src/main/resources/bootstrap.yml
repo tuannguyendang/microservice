@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: delivery-service
+  cloud:
+    config:
+      uri: http://localhost:8760/config-server
+  profiles:
+    active: local
+

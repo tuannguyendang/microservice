@@ -1,0 +1,56 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-orders-table
+      author: TuanNguyen
+      comment: Create orders table
+      changes:
+        - createTable:
+            tableName: orders
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: orders_pk
+                    autoIncrement: true
+                  name: id
+                  type: BIGSERIAL
+              - column:
+                  name: tenant_id
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_date
+                  type: timestamptz
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_by
+                  type: varchar(255)
+              - column:
+                  constraints:
+                    nullable: true
+                  name: updated_by
+                  type: varchar(255)
+              - column:
+                  constraints:
+                    nullable: true
+                  name: updated_date
+                  type: timestamptz
+              - column:
+                  name: deleted
+                  type: BOOLEAN
+                  defaultValue: FALSE
+              - column:
+                  constraints:
+                    nullable: false
+                  name: amount
+                  type: int
+              - column:
+                  constraints:
+                    nullable: false
+                  name: price
+                  type: decimal

@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert master table authority
+      author: TuanNguyen
+      comment: insert master table authority
+      changes:
+        - sqlFile:
+            encoding: utf8
+            endDelimiter: \nGO
+            path: sql/insert-authority.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true

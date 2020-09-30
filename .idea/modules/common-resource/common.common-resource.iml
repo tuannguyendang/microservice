@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="ExternalSystem" externalSystem="GRADLE" externalSystemModuleGroup="com.dangtuan" externalSystemModuleVersion="0.0.1-SNAPSHOT" linkedProjectId=":common-resource" linkedProjectPath="$MODULE_DIR$/../../../common/common-resource" rootProjectPath="$MODULE_DIR$/../../../common" />
+</module>

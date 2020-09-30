@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="ExternalSystem" externalSystem="GRADLE" externalSystemModuleGroup="com.dangtuan" externalSystemModuleVersion="0.0.1-SNAPSHOT" linkedProjectId="delivery-service" linkedProjectPath="$MODULE_DIR$/../../delivery-service" rootProjectPath="$MODULE_DIR$/../../delivery-service" />
+</module>
