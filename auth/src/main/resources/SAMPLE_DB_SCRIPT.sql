@@ -121,7 +121,7 @@ CREATE TABLE `oauth_client_details` (
 
 LOCK TABLES `oauth_client_details` WRITE;
 /*!40000 ALTER TABLE `oauth_client_details` DISABLE KEYS */;
-INSERT INTO `oauth_client_details` VALUES ('clientId',NULL,'{bcrypt}$2a$04$NQosDDH6.GxiepTER.gFKec2nEqHGfFwCPLQp/EPhOLmB1XhqJqYK','read,write','password,refresh_token,client_credentials',NULL,'ROLE_CLIENT',3600,NULL,NULL,NULL);
+INSERT INTO `oauth_client_details` VALUES ('clientId',NULL,'{bcrypt}$2a$04$NQosDDH6.GxiepTER.gFKec2nEqHGfFwCPLQp/EPhOLmB1XhqJqYK','read,write','password,refresh_token,client_credentials',NULL,'CLIENT',3600,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `oauth_client_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
