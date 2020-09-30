@@ -16,7 +16,7 @@ eureka:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/oauth_server_db?serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/oauth_server_db_jdbc?serverTimezone=UTC
     username: root
     password:
   jpa:

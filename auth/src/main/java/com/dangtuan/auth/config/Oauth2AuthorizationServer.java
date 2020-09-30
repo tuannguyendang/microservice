@@ -22,8 +22,8 @@ import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
-import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import org.springframework.security.rsa.crypto.KeyStoreKeyFactory;
 
 @Configuration
@@ -90,7 +90,7 @@ public class Oauth2AuthorizationServer extends AuthorizationServerConfigurerAdap
    */
   @Bean
   public TokenStore tokenStore() {
-    return new JwtTokenStore(accessTokenConverter());
+    return new JdbcTokenStore(dataSource);
   }
 
   @Bean

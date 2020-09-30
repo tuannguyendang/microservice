@@ -39,7 +39,7 @@ CREATE TABLE `authorities` (
 
 LOCK TABLES `authorities` WRITE;
 /*!40000 ALTER TABLE `authorities` DISABLE KEYS */;
-INSERT INTO `authorities` VALUES ('guest','GUEST',1),('user','USER',2);
+INSERT INTO `authorities` VALUES ('guest','ROLE_GUEST',1),('user','ROLE_USER',2);
 /*!40000 ALTER TABLE `authorities` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -64,7 +64,7 @@ CREATE TABLE `authority` (
 
 LOCK TABLES `authority` WRITE;
 /*!40000 ALTER TABLE `authority` DISABLE KEYS */;
-INSERT INTO `authority` VALUES (2,'ADMIN'),(1,'CLIENT'),(3,'MANAGER'),(4,'USER');
+INSERT INTO `authority` VALUES (2,'ROLE_ADMIN'),(1,'ROLE_CLIENT'),(3,'ROLE_MANAGER'),(4,'ROLE_USER');
 /*!40000 ALTER TABLE `authority` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,7 +124,7 @@ CREATE TABLE `oauth_client_details` (
 
 LOCK TABLES `oauth_client_details` WRITE;
 /*!40000 ALTER TABLE `oauth_client_details` DISABLE KEYS */;
-INSERT INTO `oauth_client_details` VALUES ('clientId',NULL,'{bcrypt}$2a$04$NQosDDH6.GxiepTER.gFKec2nEqHGfFwCPLQp/EPhOLmB1XhqJqYK','read,write','password,refresh_token,client_credentials',NULL,'CLIENT',300,NULL,NULL,NULL);
+INSERT INTO `oauth_client_details` VALUES ('clientId',NULL,'{bcrypt}$2a$04$NQosDDH6.GxiepTER.gFKec2nEqHGfFwCPLQp/EPhOLmB1XhqJqYK','read,write','password,refresh_token,client_credentials',NULL,'ROLE_CLIENT',300,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `oauth_client_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
