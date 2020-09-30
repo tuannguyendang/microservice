@@ -28,11 +28,11 @@
 			"name": "localhost:8764/resource-server/user/profile",
 			"request": {
 				"url": "localhost:8764/resource-server/v1/user/profile",
-				"method": "GET",
+				"method": "POST",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJ1c2VyIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImN1c3RvbUluZm8iOiJ0dWFuIG5ndXllbiBhdXRoIHNlcnZlciIsImV4cCI6MTYwMTI2NTA5MCwidXNlck5hbWUiOiJ1c2VyIiwiYXV0aG9yaXRpZXMiOlsiVVNFUiJdLCJqdGkiOiI3NWRhOTBmMy0xZTJmLTRjMjUtYmJjYi0wM2FjZDYzOGM5NDYiLCJjbGllbnRfaWQiOiJjbGllbnRJZCJ9.Gu5u8xktP9BQq6r-ztYOWT5-x0mO6RtQ-ZujwCxvzo_Zs4FYAdCVNq_6aZ0mP7dfXljW3L-1-6Axy6oQCKkZIHuA_zIYxqM3LEiQTo48thxO88OyIwdzqUCN8IvXljVdzBSbaxBxuhAygDOkXf-yyG8LBM5t2VaVjkUL9iF0DwQoTI6UubsVgpqkbKJu3FIH9QKrY3trJXokgbGboJ5fUebLlUy_xvDThfF26t50SXyHA0qupd746cRr2iW8MMprQpDuyxK6ZBi2Q2b2zlTaILgw6RPDDz5uY_71VvZOomPRtB42xhd_uI7nTqFy3BkFWJJ3zPhZWXNpYEcKc_WAQA",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJ1c2VyIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImN1c3RvbUluZm8iOiJ0dWFuIG5ndXllbiBhdXRoIHNlcnZlciIsImV4cCI6MTYwMTQzMjk1NSwidXNlck5hbWUiOiJ1c2VyIiwiYXV0aG9yaXRpZXMiOlsiVVNFUiJdLCJqdGkiOiI1MDgxNWQyYy0zZjkyLTRmNjAtYTNmOS1kZmY0YTFhZmZjYTAiLCJjbGllbnRfaWQiOiJjbGllbnRJZCJ9.AFDtySqRU1Iv7udgozf0PukWbnRraKwLvyD73B_sqNbizZgQthVR-MKTa7BddwW_hwEpItg-ibIqorhqhVPeDSJ6a6REjKM1D9Oa-4bPr2oM06uwh5TfcdGfRnemnhxbg2Z-1dim_4NF18H4rafdLJY1uRhhFd4bQ0nLeRZTR9FJ2hfQkZn05dpOkdI0QioIzmijBoUkc37-s0PBwjztT3HwqN_zd622-tVxuRfX2TEYYsTJFSgO0neDRW30_e_ugX_3PYZ7kU-rB0l-HPeMGZPj0Zb4ckkSLTi6Ihy7sWh-e0Tjn3a4gpxzMaczF6DYsmHla4zRRaWOg4JMFK34Jg",
 						"description": ""
 					}
 				],
