@@ -11,9 +11,9 @@ Authentication server using asymmetric
  
  Used Jdbc token store. Token generated store in database.
  
------------- Branch oauth2-server-jwt ------
+------------ Branch oauth2-server-jdbc ------
  
- Used Jwt token store. Token generated store in memory.
+ Used JDBC token store. Token generated store in database.
 
 ## Resource server
 - Resource Service: Skeleton code for Resource Server
