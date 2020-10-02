@@ -14,4 +14,5 @@ public class ApiConstants {
   public static final String GET_ORDER_SUCCESS = "Get Order Success";
 
   public static final String ORDER_API = API_VERSION + SEPARATOR + "order";
+  public static final String KAFKA_API = API_VERSION + SEPARATOR + "kafka";
 }

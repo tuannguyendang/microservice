@@ -45,3 +45,10 @@ app:
     - /oauth/**
     - /actuator/**
     - /v2/api-docs, /swagger-resources/**, /swagger-ui.html**, /webjars/**, favicon.ico
+
+kafka:
+  bootstrapAddress: localhost:9092
+  order:
+    topic:
+      name: ordertopic
+      group:
