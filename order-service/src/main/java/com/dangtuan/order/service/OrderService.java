@@ -1,6 +1,6 @@
 package com.dangtuan.order.service;
 
-import com.dangtuan.order.dto.OrderDto;
+import com.dangtuan.dto.order.OrderDto;
 import com.dangtuan.order.exception.OrderNotFoundException;
 
 public interface OrderService {

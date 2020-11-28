@@ -1,7 +1,7 @@
 package com.dangtuan.order.mapper;
 
+import com.dangtuan.dto.order.OrderDto;
 import com.dangtuan.order.constants.ApplicationConstants;
-import com.dangtuan.order.dto.OrderDto;
 import com.dangtuan.order.entity.Order;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

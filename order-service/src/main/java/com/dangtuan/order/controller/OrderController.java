@@ -1,6 +1,6 @@
 package com.dangtuan.order.controller;
 
-import com.dangtuan.order.dto.OrderDto;
+import com.dangtuan.dto.order.OrderDto;
 import com.dangtuan.order.service.MatcherService;
 import com.dangtuan.order.service.OrderService;
 import com.dangtuan.order.util.constants.ApiConstants;
