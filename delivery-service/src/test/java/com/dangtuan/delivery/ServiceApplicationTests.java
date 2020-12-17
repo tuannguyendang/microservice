@@ -1,4 +1,4 @@
-package com.dangtuan.service;
+package com.dangtuan.delivery;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

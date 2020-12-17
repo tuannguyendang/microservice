@@ -10,6 +10,7 @@ sourceCompatibility = '1.8'
 
 repositories {
 	mavenCentral()
+	mavenLocal()
 }
 
 ext {
@@ -17,10 +18,15 @@ ext {
 }
 
 dependencies {
+	annotationProcessor 'org.projectlombok:lombok'
+	implementation 'com.dangtuan:common-dto:0.0.1-SNAPSHOT'
+	implementation 'com.dangtuan:common-kafka:0.0.1-SNAPSHOT'
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 	implementation 'org.springframework.cloud:spring-cloud-starter-config'
+	implementation 'org.springframework.kafka:spring-kafka'
+	compileOnly 'org.projectlombok:lombok'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}

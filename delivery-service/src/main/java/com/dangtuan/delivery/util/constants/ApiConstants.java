@@ -1,4 +1,4 @@
-package com.dangtuan.service.util.constants;
+package com.dangtuan.delivery.util.constants;
 
 public class ApiConstants {
 
@@ -6,4 +6,6 @@ public class ApiConstants {
   public static final String SEPARATOR = "/";
 
   public static final String DELIVERY_API = API_VERSION + SEPARATOR + "delivery";
+
+  public static final String DELIVERY_DELIVERED = SEPARATOR + "delivered";
 }
