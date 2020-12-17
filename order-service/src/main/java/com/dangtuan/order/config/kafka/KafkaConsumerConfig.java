@@ -1,6 +1,6 @@
 package com.dangtuan.order.config.kafka;
 
-import com.dangtuan.order.dto.OrderDto;
+import com.dangtuan.kafka.KafkaMessage;
 import java.util.HashMap;
 import java.util.Map;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -24,18 +24,18 @@ public class KafkaConsumerConfig {
   @Value(value = "${kafka.order.topic.group}")
   private String groupId;
 
-  public ConsumerFactory<String, OrderDto> consumerFactory() {
+  public ConsumerFactory<String, KafkaMessage> consumerFactory() {
     Map<String, Object> props = new HashMap<>();
     props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapAddress);
     props.put(ConsumerConfig.GROUP_ID_CONFIG, groupId);
 
     return new DefaultKafkaConsumerFactory<>(props, new StringDeserializer(),
-        new JsonDeserializer<>(OrderDto.class));
+        new JsonDeserializer<>(KafkaMessage.class));
   }
 
   @Bean
-  public ConcurrentKafkaListenerContainerFactory<String, OrderDto> kafkaListenerContainerFactory() {
-    ConcurrentKafkaListenerContainerFactory<String, OrderDto> factory = new ConcurrentKafkaListenerContainerFactory<>();
+  public ConcurrentKafkaListenerContainerFactory<String, KafkaMessage> kafkaListenerContainerFactory() {
+    ConcurrentKafkaListenerContainerFactory<String, KafkaMessage> factory = new ConcurrentKafkaListenerContainerFactory<>();
     factory.setConsumerFactory(consumerFactory());
     return factory;
   }
