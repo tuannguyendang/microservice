@@ -41,4 +41,13 @@ Authentication server using asymmetric
 - Transaction rollback following Sagas pattern
 
 ## Event driven
-- using Kafka or Rest : not done yet
+- using Kafka or Rest : done
+Delivery Service:
+Delivery changed status delivered send an event to Order Service:
+http://localhost:8766/delivery-service/v1/delivery/delivered
+
+Order Service:
+delete order send an event to Delivery Service for cancel delivery
+http://localhost:8765/order-service/v1/order/6
+
+Current code not fully adapt ACID in case update order or delivery status failure but event sent successful. To avoid this need apply OUTBOX pattern: event will save to database in table OUTBOX, use polling job (scheduler in spring boot) or debezium... send event to Kafka
