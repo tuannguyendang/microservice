@@ -12,3 +12,6 @@ mvn install:install-file -Dfile=/Users/nguyendangtuan/Documents/Project/microser
 
 * Common Util
 mvn install:install-file -Dfile=/Users/nguyendangtuan/Documents/Project/microservice/common/common-util/build/libs/common-util-0.0.1-SNAPSHOT.jar -DgroupId=com.dangtuan -DartifactId=common-util -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar
+
+* Common Kafka
+mvn install:install-file -Dfile=/Users/nguyendangtuan/Documents/Project/microservice/common/common-kafka/build/libs/common-kafka-0.0.1-SNAPSHOT.jar -DgroupId=com.dangtuan -DartifactId=common-kafka -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar

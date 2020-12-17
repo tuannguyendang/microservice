@@ -21,3 +21,16 @@ logging:
         cloud: debug
         web: debug
         security: debug
+#
+#
+#server:
+#  port: 8760
+#
+#spring:
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/tuannguyendang/microservice/config-repo.git
+#          username:
+#          password:

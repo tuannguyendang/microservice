@@ -44,3 +44,14 @@ app:
   allowed-endpoints:
     - /oauth/**
     - /actuator/**
+
+kafka:
+  bootstrapAddress: localhost:9092
+  delivery:
+    topic:
+      name: delivery
+      group: DELIVERY_SERVICE
+  order:
+    topic:
+      name: order
+      group: ORDER_SERVICE

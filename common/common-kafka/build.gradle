@@ -1,0 +1,10 @@
+group = 'com.dangtuan'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+dependencies {
+	annotationProcessor 'org.projectlombok:lombok:1.18.12'
+	implementation 'org.apache.commons:commons-lang3:3.10'
+	implementation 'org.apache.logging.log4j:log4j-to-slf4j:2.13.3'
+	implementation 'org.projectlombok:lombok:1.18.12'
+}
