@@ -1,10 +1,10 @@
-package com.dangtuan.resource.service;
+package com.dangtuan.delivery;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ResourceServerApplicationTests {
+class ServiceApplicationTests {
 
   @Test
   void contextLoads() {

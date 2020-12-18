@@ -1,22 +1,67 @@
 {
-	"variables": [],
 	"info": {
+		"_postman_id": "5d439293-14b4-45ef-bd44-6bed1d0132e1",
 		"name": "ms_delivery",
-		"_postman_id": "2ec6bc40-c0ce-79f9-f765-4a6f5cc6626f",
-		"description": "",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "localhost:8762/service3/v1/delivery",
 			"request": {
-				"url": "localhost:8762/service3/v1/delivery",
 				"method": "GET",
 				"header": [],
-				"body": {},
-				"description": ""
+				"url": {
+					"raw": "localhost:8762/service3/v1/delivery",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"service3",
+						"v1",
+						"delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8766/delivery-service/v1/delivery/delivered",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJ1c2VyIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImN1c3RvbUluZm8iOiJ0dWFuIG5ndXllbiBhdXRoIHNlcnZlciIsImV4cCI6MTYwNjU3ODQ5OSwiYXV0aG9yaXRpZXMiOlsiVVNFUiJdLCJqdGkiOiI2MWM3N2FkYy1iMDg2LTQwNDItOGEzZS1lZWVlMzNlZDdjODAiLCJjbGllbnRfaWQiOiJjbGllbnRJZCJ9.DXZhbuttyzTxNGIrzLnkXgyk-6enhJgNE7P26bfGJ6eW8ZIqjgheU6ocDdaEVNvI5VUtWuE9Sr6ZkdsxfD4QeLPFufYVv4d174ymhFj1b8A640q6WahIBAQJb7721jTS293pMeG4unIsSGAG5poCMDzXo1DFKc_Hj8KmbNgEbw06XMD0T2I7IJ-Fnj1ZFtAKEHXJtxRjrbSRN4JPa2al0S_kQuRi7UATvmjhz8Da1fcn7pLqpNYW-QtDiWqjuUMAeCESDxnAP1ZnKRsc9tM4xVVL0szAurceLnixBcDKk3rlAb3amtmSW1ai2yNSZWkr0gCLnJv6cEr9K_-DMifc7g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"12121\",\n    \"status\": \"DELIVERED\",\n    \"orderId\": 5,\n    \"tenantId\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8766/delivery-service/v1/delivery/delivered",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"delivery-service",
+						"v1",
+						"delivery",
+						"delivered"
+					]
+				}
 			},
 			"response": []
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }

@@ -18,7 +18,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/order_db?serverTimezone=UTC
     username: root
-    password:
+    password: 123456
   jpa:
     properties.hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
@@ -44,3 +44,14 @@ app:
   allowed-endpoints:
     - /oauth/**
     - /actuator/**
+
+kafka:
+  bootstrapAddress: localhost:9092
+  delivery:
+    topic:
+      name: delivery
+      group: DELIVERY_SERVICE
+  order:
+    topic:
+      name: order
+      group: ORDER_SERVICE

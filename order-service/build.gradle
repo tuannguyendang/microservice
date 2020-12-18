@@ -1,8 +1,21 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.palantir.gradle.docker:gradle-docker:0.25.0"
+    }
+}
+
 plugins {
     id 'org.springframework.boot' version '2.3.2.RELEASE'
     id 'io.spring.dependency-management' version '1.0.9.RELEASE'
     id 'java'
 }
+
+apply plugin: 'com.palantir.docker'
 
 group = 'com.dangtuan'
 version = '0.0.1-SNAPSHOT'
@@ -23,22 +36,24 @@ ext {
 
 dependencies {
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.3.1.Final'
+    annotationProcessor 'org.projectlombok:lombok'
     implementation 'com.auth0:java-jwt:3.8.2'
-//    implementation 'com.dangtuan:common-dto:0.0.1-SNAPSHOT changing = true'
+    implementation 'com.dangtuan:common-dto:0.0.1-SNAPSHOT'
+    implementation 'com.dangtuan:common-kafka:0.0.1-SNAPSHOT'
     implementation 'org.mapstruct:mapstruct:1.3.1.Final'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     implementation 'org.springframework.cloud:spring-cloud-starter-config'
     implementation 'org.springframework.cloud:spring-cloud-starter-oauth2'
+    implementation 'org.springframework.kafka:spring-kafka'
     implementation "org.liquibase:liquibase-core:3.10.0"
     compile 'io.springfox:springfox-boot-starter:3.0.0'
-    compile('org.apache.commons:commons-lang3:3.9')
+    compile 'org.apache.commons:commons-lang3:3.9'
     compile 'commons-io:commons-io:2.7'
     compile 'javax.inject:javax.inject:1'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'mysql:mysql-connector-java'
-    annotationProcessor 'org.projectlombok:lombok'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
@@ -51,4 +66,16 @@ dependencyManagement {
 }
 test {
     useJUnitPlatform()
+}
+
+task unpack(type: Copy) {
+    dependsOn bootJar
+    from 'build/libs'
+    into("build/dependency")
+}
+
+docker {
+    name "${project.group}/${bootJar.baseName}"
+    copySpec.from(tasks.unpack.outputs).into("dependency")
+    buildArgs(['DEPENDENCY': "dependency"])
 }

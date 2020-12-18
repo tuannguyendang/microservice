@@ -17,7 +17,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/order_db?serverTimezone=UTC
     username: root
-    password:
+    password: 123456
   jpa:
     properties.hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
@@ -45,3 +45,14 @@ app:
     - /oauth/**
     - /actuator/**
     - /v2/api-docs, /swagger-resources/**, /swagger-ui.html**, /webjars/**, favicon.ico
+
+kafka:
+  bootstrapAddress: localhost:9092
+  order:
+    topic:
+      name: order
+      group: ORDER_SERVICE
+  delivery:
+    topic:
+      name: delivery
+      group: DELIVERY_SERVICE

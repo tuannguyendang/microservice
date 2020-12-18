@@ -7,7 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class SampleDeliveryDto {
+public class DeliveryDto {
 
   private Long id;
+  private DeliveryStatus status;
+  private Long orderId;
+  private Long tenantId;
 }

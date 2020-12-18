@@ -1,6 +1,6 @@
-package com.dangtuan.service.controller;
+package com.dangtuan.delivery.controller;
 
-import com.dangtuan.service.util.constants.ApiConstants;
+import com.dangtuan.delivery.util.constants.ApiConstants;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

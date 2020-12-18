@@ -7,7 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class SampleOrderDto {
+public class OrderDeliveryDto {
 
-  private Long id;
+  private Long orderId;
+  private String tenantId;
+  private String deliveryId;
 }
