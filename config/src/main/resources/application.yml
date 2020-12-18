@@ -21,7 +21,7 @@ logging:
         cloud: debug
         web: debug
         security: debug
-#
+# Github config
 #
 #server:
 #  port: 8760

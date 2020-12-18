@@ -16,6 +16,5 @@ public class KafkaMessage {
   private final String uuid = UUID.randomUUID().toString();
   private final Date createdDate = new Date();
   private KafkaEventType eventType = KafkaEventType.default_none;
-  private Class clazz;
   private String data;
 }

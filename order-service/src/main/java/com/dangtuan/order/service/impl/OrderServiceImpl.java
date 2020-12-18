@@ -99,7 +99,6 @@ public class OrderServiceImpl implements OrderService {
     orderDeliveryDto.setTenantId(order.getTenantId());
     final KafkaMessage kafkaMessage = new KafkaMessage();
     kafkaMessage.setEventType(KafkaEventType.order_cancel);
-    kafkaMessage.setClazz(DeliveryDto.class);
 
     try {
       final String jsonData = new ObjectMapper().writeValueAsString(orderDeliveryDto);

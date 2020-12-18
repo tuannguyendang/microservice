@@ -23,7 +23,6 @@ public class DeliveryServiceImpl implements DeliveryService {
   public void notificationToOrder(final DeliveryDto deliveryDto) {
     final KafkaMessage kafkaMessage = new KafkaMessage();
     kafkaMessage.setEventType(KafkaEventType.delivery_delivered);
-    kafkaMessage.setClazz(DeliveryDto.class);
 
     try {
       final String jsonData = new ObjectMapper().writeValueAsString(deliveryDto);
