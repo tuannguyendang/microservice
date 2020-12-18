@@ -5,6 +5,10 @@ server:
     tomcat:
       max-http-post-size: 5MB
 
+spring:
+  zipkin:
+    enabled: true
+
 eureka:
   client:
     registerWithEureka: true
