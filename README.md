@@ -42,6 +42,7 @@ Authentication server using asymmetric
 
 ## Event driven
 - using Kafka or Rest : done
+
 Delivery Service:
 Delivery changed status delivered send an event to Order Service:
 http://localhost:8766/delivery-service/v1/delivery/delivered
