@@ -24,6 +24,8 @@ spring:
     properties.hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
       ddl-auto: none
+  zipkin:
+    enabled: true
 
 ribbon:
   connectTimeout: 10000

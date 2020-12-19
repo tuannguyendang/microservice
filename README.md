@@ -9,7 +9,11 @@ Authentication server using asymmetric
 
 ------------ Branch Master -----------------
  
- Used Jdbc token store. Token generated store in database.
+ Used Jwt token store. Token generated store in memory.
+ 
+------------ Branch oauth2-server-jdbc -----------------
+ 
+ Used Jwt token store. Token generated store in database.
  
 ------------ Branch oauth2-server-jwt ------
  
@@ -40,6 +44,9 @@ Authentication server using asymmetric
 - Database per service
 - Transaction rollback following Sagas pattern
 
+### kafka
+zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties & kafka-server-start /usr/local/etc/kafka/server.properties
+
 ## Event driven
 - using Kafka or Rest : done
 
@@ -52,3 +59,27 @@ delete order send an event to Delivery Service for cancel delivery
 http://localhost:8765/order-service/v1/order/6
 
 Current code not fully adapt ACID in case update order or delivery status failure but event sent successful. To avoid this need apply OUTBOX pattern: event will save to database in table OUTBOX, use polling job (scheduler in spring boot) or debezium... send event to Kafka
+
+### Running
+Step 1: Start config service
+
+Step 2: Start Registry service
+
+Step 3: Start Gateway service
+
+Step 4: Start other services
+
+### Network (Service Mesh)
+
+All request go through gateway:
+
+    A. External:
+    
+    requests -> gateway -> services
+
+    B. Internal: 
+    
+    Requests -> Gateway -> Services
+    
+    Requests -> Services -> Services
+
