@@ -9,7 +9,11 @@ Authentication server using asymmetric
 
 ------------ Branch Master -----------------
  
- Used Jdbc token store. Token generated store in database.
+ Used Jwt token store. Token generated store in memory.
+ 
+------------ Branch oauth2-server-jdbc -----------------
+ 
+ Used Jwt token store. Token generated store in database.
  
 ------------ Branch oauth2-server-jwt ------
  
@@ -64,3 +68,18 @@ Step 2: Start Registry service
 Step 3: Start Gateway service
 
 Step 4: Start other services
+
+### Network (Service Mesh)
+
+All request go through gateway:
+
+    A. External:
+    
+    requests -> gateway -> services
+
+    B. Internal: 
+    
+    Requests -> Gateway -> Services
+    
+    Requests -> Services -> Services
+
