@@ -26,7 +26,7 @@ zuul:
     ## auth-server router
     auth-server:
       path: /auth/**
-      serviceId: demo-auth-server
+      serviceId: auth-server
       url: http://localhost:8763/auth-server
       stripPrefix: true
     ## services router

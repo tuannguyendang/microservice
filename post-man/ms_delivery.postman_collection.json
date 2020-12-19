@@ -61,6 +61,77 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "http://localhost:8766/delivery-service/actuator/health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8766/delivery-service/actuator/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8766",
+					"path": [
+						"delivery-service",
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Call Health through Gateway",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8762/service3/actuator/health",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"service3",
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Call update delivery through gateway",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"12121\",\n    \"status\": \"DELIVERED\",\n    \"orderId\": 7,\n    \"tenantId\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8762/service3/v1/delivery/delivered",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"service3",
+						"v1",
+						"delivery",
+						"delivered"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
