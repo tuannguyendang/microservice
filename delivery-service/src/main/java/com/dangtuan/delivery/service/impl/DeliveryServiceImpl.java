@@ -42,4 +42,10 @@ public class DeliveryServiceImpl implements DeliveryService {
         orderDeliveryDto.getOrderId(), orderDeliveryDto.getTenantId(),
         orderDeliveryDto.getDeliveryId());
   }
+
+  @Override
+  public void sentryTrigger() throws Exception {
+    log.error("Trigger sentry exception in service layer!");
+    throw new Exception("Trigger sentry exception in service layer!");
+  }
 }

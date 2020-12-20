@@ -12,3 +12,6 @@ Open Zipkin: Running latest image docker run -d -p 9411:9411 openzipkin/zipkin. 
 more version for zipkin: https://hub.docker.com/u/openzipkin
 
 Admin UI: http://localhost:9411/zipkin/?serviceName=delivery-service&lookback=30m&endTs=1608301463449&limit=10
+
+### Exception tracing
+https://sentry.io
