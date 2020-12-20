@@ -57,3 +57,6 @@ kafka:
     topic:
       name: order
       group: ORDER_SERVICE
+sentry:
+  dsn: https://06a6fdbce9cc44b497b1d499998b9873@o494115.ingest.sentry.io/5564433
+  exception-resolver-order: 2147483647

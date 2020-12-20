@@ -8,4 +8,5 @@ public class ApiConstants {
   public static final String DELIVERY_API = API_VERSION + SEPARATOR + "delivery";
 
   public static final String DELIVERY_DELIVERED = SEPARATOR + "delivered";
+  public static final String SENTRY_API = SEPARATOR + "sentry";
 }
