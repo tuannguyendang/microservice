@@ -50,3 +50,7 @@ app:
   allowed-endpoints:
     - /oauth/**
     - /actuator/**
+
+sentry:
+  dsn: {your_url}
+  exception-resolver-order: 2147483647

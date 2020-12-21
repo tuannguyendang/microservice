@@ -19,8 +19,10 @@ ext {
 
 dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
+	compileOnly 'org.projectlombok:lombok'
 	implementation 'com.dangtuan:common-dto:0.0.1-SNAPSHOT'
 	implementation 'com.dangtuan:common-kafka:0.0.1-SNAPSHOT'
+	implementation 'io.sentry:sentry-spring-boot-starter:3.2.0'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -29,8 +31,6 @@ dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-starter-zipkin'
 	implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
 	implementation 'org.springframework.kafka:spring-kafka'
-	implementation 'io.sentry:sentry-spring-boot-starter:3.2.0'
-	compileOnly 'org.projectlombok:lombok'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}

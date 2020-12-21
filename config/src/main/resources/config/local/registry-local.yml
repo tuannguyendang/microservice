@@ -6,3 +6,18 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+logging:
+  file: ./logs/registry-server.log
+  level:
+    org:
+      springframework:
+        cloud: debug
+        web: debug
+        security: debug
+    com:
+      dangtuan: debug
+
+sentry:
+  dsn: {your_url}
+  exception-resolver-order: 2147483647

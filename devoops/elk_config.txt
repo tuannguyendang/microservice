@@ -1,0 +1,18 @@
+sudo vim /usr/local/etc/logstash/logstash-logagreegation.conf
+
+input {
+    file {
+        path => "/Users/nguyendangtuan/Documents/Project/logs/*.log"
+        codec => "plain"
+        type => "logback"
+    }
+}
+output {
+    stdout { codec => rubydebug }
+    elasticsearch {
+        hosts => ["localhost:9200"]
+        index => "bootiful-elk-file-%{+YYYY.MM.dd}"
+
+    }
+}
+

@@ -58,3 +58,7 @@ kafka:
     topic:
       name: delivery
       group: DELIVERY_SERVICE
+
+sentry:
+  dsn: {your_url}
+  exception-resolver-order: 2147483647
