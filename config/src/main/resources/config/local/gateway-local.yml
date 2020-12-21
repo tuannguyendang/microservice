@@ -72,7 +72,7 @@ cors:
       - OPTIONS
       - DELETE
 logging:
-  file: ./logs/demo-gateway.log
+  file: ./logs/gateway-server.log
   level:
     feign: debug
     org:
@@ -87,3 +87,7 @@ app:
   cors:
     origins:
       - chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop
+
+sentry:
+  dsn: {your_url}
+  exception-resolver-order: 2147483647

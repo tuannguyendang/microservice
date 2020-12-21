@@ -32,7 +32,7 @@ ribbon:
   connectTimeout: 10000
   readTimeout: 10000
 logging:
-  file: ./logs/order-server.log
+  file: ./logs/auditor-server.log
   level:
     org:
       springframework:
@@ -55,3 +55,7 @@ app:
 #    topic:
 #      name: ordertopic
 #      group:
+
+sentry:
+  dsn: {your_url}
+  exception-resolver-order: 2147483647

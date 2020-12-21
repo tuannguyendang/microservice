@@ -30,7 +30,7 @@ ribbon:
   connectTimeout: 10000
   readTimeout: 10000
 logging:
-  file: ./logs/order-server.log
+  file: ./logs/delivery-server.log
   level:
     org:
       springframework:

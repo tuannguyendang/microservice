@@ -132,6 +132,27 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Call trigger sentry",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8762/service3/v1/delivery/sentry",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"service3",
+						"v1",
+						"delivery",
+						"sentry"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
