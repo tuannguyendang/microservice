@@ -95,3 +95,34 @@ https://sentry.io
 
 ### Log Tracing
 ELK
+
+### Metrics
+
+#### Spring actuator: 
+https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html
+
+docker inspect container_id
+
+http://{container_ip}:8766/delivery-service/actuator/prometheus
+
+#### Prometheus:
+
+/devoops/prometheus.yml
+
+docker run --name=prometheus -p 9090:9090 -v /Users/nguyendangtuan/Documents/Project/microservice/devoops/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+
+http://localhost:9090/targets
+
+#### Grafana
+docker run -d --name=grafana -p 3000:3000 grafana/grafana
+ user: admin/123456
+ 
+http://localhost:3000/
+
+- Create data source
+![alt text](./devoops/grafana_config1.png)
+![alt text](./devoops/grafana_config2.png)
+
+- Import dashboard
+![alt text](./devoops/grafana_config3.png)
+![alt text](./devoops/grafana_config4.png)
