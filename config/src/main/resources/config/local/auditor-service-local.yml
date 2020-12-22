@@ -17,14 +17,20 @@ spring:
   zipkin:
     enabled: true
   datasource:
-    url: jdbc:postgresql://localhost:5432/auditor_db
+    url: jdbc:postgresql://localhost:5432/postgres
     username: auditor
     password: 123456
   jpa:
-    show-sql: false
-    properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
     hibernate:
       ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        default_schema: auditor_db
   liquibase:
     change-log: classpath:/db/db-changelog-master.yaml
 

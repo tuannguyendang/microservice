@@ -62,3 +62,14 @@ kafka:
 sentry:
   dsn: {your_url}
   exception-resolver-order: 2147483647
+
+management:
+  metrics:
+    export:
+      prometheus:
+        pushgateway:
+          enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: prometheus, info, health

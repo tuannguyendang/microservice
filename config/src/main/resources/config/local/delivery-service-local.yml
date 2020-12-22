@@ -15,14 +15,21 @@ eureka:
 
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/order_db?serverTimezone=UTC
-    username: root
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: delivery
     password: 123456
+    validationQuery: SELECT 1
   jpa:
-    properties.hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
     hibernate:
       ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        default_schema: delivery_db
   zipkin:
     enabled: true
 
@@ -60,3 +67,14 @@ kafka:
 sentry:
   dsn: {your_url}
   exception-resolver-order: 2147483647
+
+management:
+  metrics:
+    export:
+      prometheus:
+        pushgateway:
+          enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: prometheus, info, health
