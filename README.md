@@ -131,3 +131,9 @@ http://localhost:3000/
 - Import dashboard
 ![alt text](./devoops/grafana_config3.png)
 ![alt text](./devoops/grafana_config4.png)
+
+#### Testing
+- Framework and library: TestNg, Mockito, PowerMock, Spring test, Mockserver
+- Unit Test
+- Integration Test
+- Refer setting in order-service
