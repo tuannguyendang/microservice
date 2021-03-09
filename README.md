@@ -44,9 +44,9 @@ Authentication server using asymmetric
 - Database per service
 - Transaction rollback following Sagas pattern
 
-- Postgress: One database with multiple schemas
+- PostgreSQL: One database with multiple schemas
     
-    - database: postgres
+    - database: postgreSQL
     - schemas: delivery_db, auditor_db,...
 
 ### kafka
