@@ -16,7 +16,7 @@ eureka:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/order_db?serverTimezone=UTC
+    url: jdbc:mysql://localhost:3307/order_db?serverTimezone=UTC
     username: order
     password: 123456
   jpa:
@@ -61,7 +61,7 @@ kafka:
       group: DELIVERY_SERVICE
 
 sentry:
-  dsn: https://06a6fdbce9cc44b497b1d499998b9873@o494115.ingest.sentry.io/5564433
+  dsn: {your_url}
   exception-resolver-order: 2147483647
 
 management:
