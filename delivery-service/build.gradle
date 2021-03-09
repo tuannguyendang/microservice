@@ -16,6 +16,7 @@ plugins {
 }
 
 apply plugin: 'com.palantir.docker'
+apply from: 'integration-test.gradle'
 
 group = 'com.dangtuan'
 version = '0.0.1-SNAPSHOT'
@@ -54,9 +55,15 @@ dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
 	implementation 'org.springframework.kafka:spring-kafka'
 	runtimeOnly 'org.postgresql:postgresql:42.2.18'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+	testImplementation 'org.apache.httpcomponents:httpclient:4.5.13'
+	testImplementation 'org.mockito:mockito-core:3.6.0'
+	testImplementation 'org.mock-server:mockserver-netty:5.11.2'
+	testImplementation ('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	testImplementation 'org.powermock:powermock-module-testng:2.0.9'
+	testImplementation 'org.powermock:powermock-api-mockito2:2.0.9'
+	testImplementation 'org.testng:testng:7.4.0'
 }
 
 dependencyManagement {

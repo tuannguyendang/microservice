@@ -1,5 +1,38 @@
 databaseChangeLog:
   - changeSet:
+      id: create-matcher-table
+      author: TuanNguyen
+      comment: Create matcher table
+      changes:
+        - createTable:
+            tableName: matcher
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: authority_pk
+                    autoIncrement: true
+                  name: id
+                  type: BIGSERIAL
+              - column:
+                  name: endpoint
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: method_type
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: auth_id
+                  type: BIGSERIAL
+                  constraints:
+                    nullable: true
+                    foreignKeyName: auth_fk
+                    references: authority(id)
+  - changeSet:
       id: insert role base access control
       author: TuanNguyen
       comment: insert role base access control

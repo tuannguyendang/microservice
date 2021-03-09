@@ -1,5 +1,6 @@
 package com.dangtuan.order.config;
 
+import com.dangtuan.order.constants.ApplicationConstants;
 import com.dangtuan.order.dto.UserSession;
 import java.util.Enumeration;
 import javax.inject.Provider;
@@ -7,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationDetails;
@@ -21,6 +23,7 @@ public class CustomTokenExtractor implements TokenExtractor {
 
   @Bean
   @RequestScope
+  @Profile(ApplicationConstants.NOT_ACTIVE_INTEGRATION_PROFILE)
   public UserSession userSession() {
     return new UserSession();
   }

@@ -1,5 +1,27 @@
 databaseChangeLog:
   - changeSet:
+      id: create-authority-table
+      author: TuanNguyen
+      comment: Create authority table
+      changes:
+        - createTable:
+            tableName: authority
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: authority_pk
+                    autoIncrement: true
+                  name: id
+                  type: BIGSERIAL
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+  - changeSet:
       id: insert master table authority
       author: TuanNguyen
       comment: insert master table authority

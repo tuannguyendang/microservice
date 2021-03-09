@@ -1,0 +1,76 @@
+server:
+  port: 8765
+  servlet:
+    context-path: /order-service
+    max-http-header-size: 61440
+    tomcat:
+      max-http-post-size: 5MB
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/order_db?serverTimezone=UTC
+    username: order
+    password: 123456
+  jpa:
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:/db/db-changelog-master.yaml
+  zipkin:
+    enabled: false
+
+ribbon:
+  connectTimeout: 10000
+  readTimeout: 10000
+logging:
+  file: ./logs/order-server.log
+  level:
+    org:
+      springframework:
+        cloud: debug
+        web: debug
+        security: debug
+    com:
+      dangtuan: debug
+
+app:
+  public-key: public_key.txt
+  allowed-endpoints:
+    - /oauth/**
+    - /actuator/**
+    - /v2/api-docs, /swagger-resources/**, /swagger-ui.html**, /webjars/**, favicon.ico
+
+kafka:
+  bootstrapAddress: localhost:9092
+  order:
+    topic:
+      name: order
+      group: ORDER_SERVICE
+  delivery:
+    topic:
+      name: delivery
+      group: DELIVERY_SERVICE
+
+sentry:
+  dsn: https://06a6fdbce9cc44b497b1d499998b9873@o494115.ingest.sentry.io/5564433
+  exception-resolver-order: 2147483647
+
+management:
+  metrics:
+    export:
+      prometheus:
+        pushgateway:
+          enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: prometheus, info, health

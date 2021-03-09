@@ -1,0 +1,28 @@
+sourceSets {
+    integration {
+        java.srcDir "$projectDir/src/integration/java"
+        resources.srcDir "$projectDir/src/integration/resources"
+        compileClasspath += sourceSets.main.output + configurations.testRuntimeClasspath
+        runtimeClasspath += output + compileClasspath
+    }
+}
+
+task setupTestDatabase(type: Exec) {
+    commandLine 'sh', './src/integration/scripts/integrationDBSetup.sh'
+}
+
+// integration tests task should be in verification group
+// integration tests should run after unit tests
+task integrationTest(type: Test) {
+    description = 'Runs the integration tests.'
+    systemProperty "spring.cloud.config.uri", "http://localhost:8760/config-server/"
+    group = 'verification'
+    dependsOn setupTestDatabase
+    useTestNG()
+    testClassesDirs = sourceSets.integration.output.classesDirs
+    classpath = sourceSets.integration.runtimeClasspath
+    mustRunAfter test
+}
+
+// integration tests should be run before check task
+check.dependsOn integrationTest
