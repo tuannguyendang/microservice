@@ -13,14 +13,21 @@ import com.dangtuan.order.kafka.producer.MessageProducer;
 import com.dangtuan.order.mapper.OrderMapper;
 import com.dangtuan.order.repository.OrderRepository;
 import com.dangtuan.order.service.OrderService;
+import com.dangtuan.order.util.Utils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.HashMap;
 import java.util.Optional;
 import javax.inject.Provider;
 import javax.transaction.Transactional;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 @Service
 @Transactional
@@ -35,6 +42,12 @@ public class OrderServiceImpl implements OrderService {
 
   @Autowired
   private MessageProducer messageProducer;
+
+  @Autowired
+  private RestTemplate restTemplate;
+
+  @Value("${api.payment}")
+  private String PAYMENT_URL;
 
   @Override
   public OrderDto getOrder(final Long id) throws OrderNotFoundException {
@@ -52,6 +65,9 @@ public class OrderServiceImpl implements OrderService {
     final Order order = OrderMapper.INSTANCE.mapToOrder(orderDto);
     order.setTenantId(userSession.getTenantId());
     this.orderRepository.save(order);
+    final HttpEntity<Object> entity = new HttpEntity<>(Utils.getHeaders());
+    final ResponseEntity<HashMap> response = this.restTemplate
+        .exchange(PAYMENT_URL, HttpMethod.POST, entity, HashMap.class);
     return OrderMapper.INSTANCE.mapToOrderDto(order);
   }
 

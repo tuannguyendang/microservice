@@ -1,5 +1,6 @@
 server:
   port: 8765
+  mock-server-port: 1001
   servlet:
     context-path: /order-service
     max-http-header-size: 61440
@@ -73,3 +74,5 @@ management:
     web:
       exposure:
         include: prometheus, info, health
+api:
+  payment: http://localhost:8087/v1/payment
