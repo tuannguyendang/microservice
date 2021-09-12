@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert role base access control for admin and manager
+      author: TuanNguyen
+      comment: insert role base access control for admin and manager
+      changes:
+        - sqlFile:
+            encoding: utf8
+            endDelimiter: \nGO
+            path: sql/insert-new-matcher.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true

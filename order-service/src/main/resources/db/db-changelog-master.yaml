@@ -7,3 +7,5 @@ databaseChangeLog:
       file: classpath:/db/changelog/insert-authority.yaml
   - include:
       file: classpath:/db/changelog/insert-matcher.yaml
+  - include:
+      file: classpath:/db/changelog/insert-new-matcher.yaml

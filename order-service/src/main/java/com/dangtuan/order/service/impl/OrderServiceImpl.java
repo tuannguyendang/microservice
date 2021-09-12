@@ -49,6 +49,9 @@ public class OrderServiceImpl implements OrderService {
   @Value("${api.payment}")
   private String PAYMENT_URL;
 
+  @Value("${api.enable}")
+  private String ENABLE_PAYMENT;
+
   @Override
   public OrderDto getOrder(final Long id) throws OrderNotFoundException {
     final Optional<Order> orderOptional = this.orderRepository.findById(id);
@@ -66,8 +69,10 @@ public class OrderServiceImpl implements OrderService {
     order.setTenantId(userSession.getTenantId());
     this.orderRepository.save(order);
     final HttpEntity<Object> entity = new HttpEntity<>(Utils.getHeaders());
-    final ResponseEntity<HashMap> response = this.restTemplate
-        .exchange(PAYMENT_URL, HttpMethod.POST, entity, HashMap.class);
+    if (Boolean.TRUE.equals(ENABLE_PAYMENT)) {
+      final ResponseEntity<HashMap> response = this.restTemplate
+              .exchange(PAYMENT_URL, HttpMethod.POST, entity, HashMap.class);
+    }
     return OrderMapper.INSTANCE.mapToOrderDto(order);
   }
 

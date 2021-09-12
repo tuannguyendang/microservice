@@ -6,6 +6,8 @@ import com.dangtuan.order.service.MatcherService;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
+
+import com.dangtuan.order.util.constants.ApiConstants;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -78,5 +80,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
           .antMatchers(HttpMethod.valueOf(matcher.getMethodType()), matcher.getEndpoint())
           .access("hasAuthority('" + matcher.getAuthority() + "')");
     }
+    http.authorizeRequests()
+            .antMatchers(ApiConstants.DENY_AUDIT_API).denyAll();
   }
 }

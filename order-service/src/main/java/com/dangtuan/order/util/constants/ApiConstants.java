@@ -14,4 +14,8 @@ public class ApiConstants {
   public static final String GET_ORDER_SUCCESS = "Get Order Success";
 
   public static final String ORDER_API = API_VERSION + SEPARATOR + "order";
+  public static final String AUDIT_API = API_VERSION + SEPARATOR + "audit";
+  public static final String AUDIT_REPORT =  SEPARATOR + "report";
+  public static final String AUDIT_MANGER =  SEPARATOR + "manager";
+  public static final String DENY_AUDIT_API = SEPARATOR + API_VERSION + SEPARATOR + "audit" + SEPARATOR + "**";
 }

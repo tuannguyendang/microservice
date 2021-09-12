@@ -77,3 +77,4 @@ management:
         include: prometheus, info, health
 api:
   payment: http://localhost:1001/v1/payment
+  enable: false
