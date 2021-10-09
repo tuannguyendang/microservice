@@ -6,17 +6,17 @@ server:
     tomcat:
       max-http-post-size: 5MB
 
-eureka:
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+#eureka:
+#  client:
+#    registerWithEureka: true
+#    fetchRegistry: true
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka
 
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/oauth_server_db?serverTimezone=UTC
+    url: jdbc:mysql://localhost:3307/oauth_server_db?serverTimezone=UTC
     username: root
     password: 123456
   jpa:
@@ -24,8 +24,8 @@ spring:
     properties.hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
       ddl-auto: none
-  zipkin:
-    enabled: true
+#  zipkin:
+#    enabled: true
 
 ribbon:
   connectTimeout: 10000
@@ -51,6 +51,6 @@ app:
     - /oauth/**
     - /actuator/**
 
-sentry:
-  dsn: {your_url}
-  exception-resolver-order: 2147483647
+#sentry:
+#  dsn: {your_url}
+#  exception-resolver-order: 2147483647
