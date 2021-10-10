@@ -17,22 +17,22 @@ spring:
         client:
           registration:
             google:
-              clientId: 951668701781-v2nrof22vsclhmt4sronb8nd4tndgp24.apps.googleusercontent.com
-              clientSecret: ZFhrV7P1Au4_yRIbASg76G0E
+              clientId: {client_id}
+              clientSecret: { clientSecret }
               redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
               scope:
                 - email
                 - profile
             facebook:
-              clientId: 390999682634380
-              clientSecret: 416eab179e4daf28561472640c90cd0e
+              clientId: { clientId }
+              clientSecret: { clientSecret }
               redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
               scope:
                 - email
                 - public_profile
             github:
-              clientId: Iv1.8b722b043dc14092
-              clientSecret: fd5ecef31dde771122b3bdc3eaa25c7be7eae342
+              clientId: {clientId}
+              clientSecret: { clientSecret }
               redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
               scope:
                 - user:email
