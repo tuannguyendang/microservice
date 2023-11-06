@@ -9,3 +9,5 @@ databaseChangeLog:
       file: classpath:/db/changelog/insert-matcher.yaml
   - include:
       file: classpath:/db/changelog/insert-new-matcher.yaml
+  - include:
+      file: classpath:/db/changelog/create-product-table.yaml

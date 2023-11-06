@@ -1,6 +1,8 @@
 package com.dangtuan.order.controller;
 
 import com.dangtuan.dto.order.OrderDto;
+import com.dangtuan.order.dto.filter.FilterCriteria;
+import com.dangtuan.order.dto.response.OrderResponse;
 import com.dangtuan.order.service.MatcherService;
 import com.dangtuan.order.service.OrderService;
 import com.dangtuan.order.util.constants.ApiConstants;
@@ -10,6 +12,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -62,6 +65,13 @@ public class OrderController {
   public ResponseEntity<Void> deleteOrder(@PathVariable final Long id) {
     this.orderService.deleteOrder(id);
     return new ResponseEntity<>(HttpStatus.OK);
+  }
+
+  @GetMapping("/")
+  public ResponseEntity<Page> searchOrder() {
+    FilterCriteria filterCriteria = FilterCriteria.builder().build();
+    final Page<OrderResponse> orderDto = this.orderService.search(filterCriteria);
+    return new ResponseEntity<>(orderDto, HttpStatus.OK);
   }
 
 }

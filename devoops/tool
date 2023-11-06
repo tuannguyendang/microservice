@@ -2,3 +2,16 @@ brew reinstall dbeaver-community
 
 docker run --name pg_local -d -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=123456 postgres:latest
 auditor/123456
+
+docker run -p 3307:3306 --name mysql_local -e MYSQL_ROOT_PASSWORD=123456 -d mysql:latest
+root/123456
+
+---push to dockerhub
+docker build -t tuannguyendang/oauth_server_db .
+docker images
+docker run -p 3308:3306 --name mysql_auth -e MYSQL_ROOT_PASSWORD=123456 -d tuannguyendang/oauth_server_db
+docker logs
+docker login
+  Username: tuannguyendang
+  Password:
+docker push tuannguyendang/oauth_server_db:v1.0

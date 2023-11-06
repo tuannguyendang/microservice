@@ -12,4 +12,5 @@ public class EntityConstants {
   public static final String AMOUNT = "amount";
   public static final String PRICE = "price";
   public static final String TBL_ORDER = "orders";
+  public static final String TBL_PRODUCT = "product";
 }

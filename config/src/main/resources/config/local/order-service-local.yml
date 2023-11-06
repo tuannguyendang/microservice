@@ -7,12 +7,12 @@ server:
     tomcat:
       max-http-post-size: 5MB
 
-#eureka:
-#  client:
-#    registerWithEureka: true
-#    fetchRegistry: true
-#    serviceUrl:
-#      defaultZone: http://localhost:8761/eureka/
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
 
 spring:
   datasource:
@@ -25,8 +25,8 @@ spring:
       ddl-auto: none
   liquibase:
     change-log: classpath:/db/db-changelog-master.yaml
-#  zipkin:
-#    enabled: true
+  zipkin:
+    enabled: true
 
 ribbon:
   connectTimeout: 10000
@@ -73,7 +73,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: prometheus, info, health
+        include: refresh, prometheus, info, health
 api:
   payment: http://localhost:8087/v1/payment
   enable: true

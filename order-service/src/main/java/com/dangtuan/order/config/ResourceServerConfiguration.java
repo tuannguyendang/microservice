@@ -3,11 +3,10 @@ package com.dangtuan.order.config;
 import com.dangtuan.order.dto.MatcherMappingDto;
 import com.dangtuan.order.properties.AuthProperties;
 import com.dangtuan.order.service.MatcherService;
+import com.dangtuan.order.util.constants.ApiConstants;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-
-import com.dangtuan.order.util.constants.ApiConstants;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -81,6 +80,6 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
           .access("hasAuthority('" + matcher.getAuthority() + "')");
     }
     http.authorizeRequests()
-            .antMatchers(ApiConstants.DENY_AUDIT_API).denyAll();
+        .antMatchers(ApiConstants.DENY_AUDIT_API).denyAll();
   }
 }

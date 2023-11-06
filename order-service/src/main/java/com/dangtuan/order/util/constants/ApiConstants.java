@@ -18,4 +18,5 @@ public class ApiConstants {
   public static final String AUDIT_REPORT =  SEPARATOR + "report";
   public static final String AUDIT_MANGER =  SEPARATOR + "manager";
   public static final String DENY_AUDIT_API = SEPARATOR + API_VERSION + SEPARATOR + "audit" + SEPARATOR + "**";
+  public static final String REFRESH_API = SEPARATOR + "refresh";
 }

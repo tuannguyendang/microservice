@@ -2,7 +2,9 @@ package com.dangtuan.order.mapper;
 
 import com.dangtuan.dto.order.OrderDto;
 import com.dangtuan.order.constants.ApplicationConstants;
+import com.dangtuan.order.dto.response.OrderResponse;
 import com.dangtuan.order.entity.Order;
+import java.util.List;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
@@ -28,4 +30,6 @@ public interface OrderMapper {
       @Mapping(target = ApplicationConstants.TENANT_ID, ignore = true)
   })
   void mapToUpdate(OrderDto orderDto, @MappingTarget Order order);
+
+  List<OrderResponse> toListDto(final List<Order> order);
 }

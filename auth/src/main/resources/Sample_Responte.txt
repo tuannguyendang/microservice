@@ -1,0 +1,34 @@
+user/123456
+{
+    "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJ1c2VyIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImN1c3RvbUluZm8iOiJ0dWFuIG5ndXllbiBhdXRoIHNlcnZlciIsImV4cCI6MTYzMTE3MDIwMiwiYXV0aG9yaXRpZXMiOlsiVklTSVRPUiIsIlVTRVIiXSwianRpIjoiYjE0ZDUzN2YtZTg1My00MzkyLWI0MmMtNjQxZmU4ZmE4YmVmIiwiY2xpZW50X2lkIjoiY2xpZW50SWQifQ.XTbW4a1MREOJ_iZjhxAEgbTnTLWh_ljHN6SXLEj_wDXVWKAdOrwBb3VWOiKNXZ6jH_05g03-xHNqp_aCqduh3-z7V3NKoxNvX4bGplJaiMYy4RS75aVhc_PgVW5d5EGehDs-M7kanF5fJ0QVbmIimCU7_JHXt3msd3ppzJ1Za8P1Ufmg3y_KG4FFWeAI8R0R1yS6eFvxS2A4MNXS9uufTw3Zjbol4OEFXDGxgMvICWWjryGw1qvzrBMN0Pw6gMrCN2mzQpUFLGl3ezcZL1WyEaH2Q6_kvIpRORGBNundEbevKGtbt6i-PnT-QN-5mZ2yxVMuyY7cdBpJj-xN6XC7hg",
+    "token_type": "bearer",
+    "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJ1c2VyIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImF0aSI6ImIxNGQ1MzdmLWU4NTMtNDM5Mi1iNDJjLTY0MWZlOGZhOGJlZiIsImN1c3RvbUluZm8iOiJ0dWFuIG5ndXllbiBhdXRoIHNlcnZlciIsImV4cCI6MTYzMzc1OTIwMiwiYXV0aG9yaXRpZXMiOlsiVklTSVRPUiIsIlVTRVIiXSwianRpIjoiMDBlNDY1ZjctMGRhOS00N2ViLWI1ZTAtYmU4NzQ5MzZkYjBjIiwiY2xpZW50X2lkIjoiY2xpZW50SWQifQ.CdMRhkcMTmqZKtQGsTot91wMO4UI4fb9ng4VbbZ9tODrVXnM7xAxXwCcXAYn3iQ2QWDotovi7FSI17cfP5aMwEPiCrnSxZkAH4EOjFkSMx3_a8Tms9IczswDEd5RfZx4wO7q2VFCQcAHHff8u6tJEWyNrUhXoAIN2hK5JSBeinjMtDuNsUCLCVdoJiVYVPFSBf5lO_nyk0W_VdfdNfkLmuOB649103ZK3KJ4d6abQFdbW62o5eh1OUYU3fqOwM5ciFIBpj2u9PP2WAwm4--UjzL5Arjh5AvPi0VMF7jVYpKIRlyVqgshQ6pBbW2YEOPYBp7AVktEIxl_eZBld4jExg",
+    "expires_in": 2999,
+    "scope": "read write",
+    "customInfo": "tuan nguyen auth server",
+    "authorities": [
+        "VISITOR",
+        "USER"
+    ],
+    "jti": "b14d537f-e853-4392-b42c-641fe8fa8bef"
+}
+-- call
+http://localhost:8765/order-service/v1/order
+SUCCESS
+
+guest/123456
+{
+    "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJndWVzdCIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJjdXN0b21JbmZvIjoidHVhbiBuZ3V5ZW4gYXV0aCBzZXJ2ZXIiLCJleHAiOjE2MzExNzAyOTMsImF1dGhvcml0aWVzIjpbIkdVRVNUIl0sImp0aSI6IjQwMTc2ZjBmLTYyOGEtNGRmNC1iZDMwLTMzODM5ODBhYzdiMiIsImNsaWVudF9pZCI6ImNsaWVudElkIn0.DT7FFMTFzIvbqFfylhUQEWoVYaYChOEmDCeDAzsi-bVy04SX5PfnKt1aNnH8bFjdkp7RmSStveDo3NsORPBoGby--FyENhSA9OujIWy8hyLuY-duipQ8yfg0z_oX-u-00r8AL4WCddTj-ZNp3B2Kl-1ku4GsYyqnczOQT02oMLVtoqSYTG0N5ydRQw-IuLKS98hZ3yCySSoEyHFJiS39roqYE4k-qWXvFWeLaVYMlh57hSVzfU75UTCiM1LaFwUiOloqhfjUeMotnWLsrrAK9QAnSLOdCdADG1mynW1PPZG-8Mtng4Dnw3SpyhYy-4T--JwpgrXVy-HfdI9WCQd0Tg",
+    "token_type": "bearer",
+    "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJndWVzdCIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJhdGkiOiI0MDE3NmYwZi02MjhhLTRkZjQtYmQzMC0zMzgzOTgwYWM3YjIiLCJjdXN0b21JbmZvIjoidHVhbiBuZ3V5ZW4gYXV0aCBzZXJ2ZXIiLCJleHAiOjE2MzM3NTkyOTMsImF1dGhvcml0aWVzIjpbIkdVRVNUIl0sImp0aSI6IjYxZGI5NGU0LWNmMjItNDJhMS1iMGUzLTMxOTBlZjY1Yjk3MyIsImNsaWVudF9pZCI6ImNsaWVudElkIn0.QDpFwxsXHDxnCmLVZebx7JIK6BQsL24jNlEtmoWKUtaJG0AMDd0blzrZkgGwowGdvbI15zqJQmcCtBbBhbX2iFg8PFeThvjkquNoInyrpSOL-VTptMiACMMcM_pzIiJh3a15evnl6HR7q8MNiv24SmRnSpF3HbmmAcyTE7V6ax5khLKqZQn9FenuohTfUek5sAyz-0UMViNmFUUr2e6DwgWTeuxB2Ifxngk-34LO5DiyQGVNbUyhWZOl1cztmIMaSXqHJ2JoOGjfKAjgDaz5zsYtDqcmVqEjMZ-sQFVWesYA0eubhDj4WKzV4x4erZAvG0tQspBw9wu06hWOXYEZxQ",
+    "expires_in": 2999,
+    "scope": "read write",
+    "customInfo": "tuan nguyen auth server",
+    "authorities": [
+        "GUEST"
+    ],
+    "jti": "40176f0f-628a-4df4-bd30-3383980ac7b2"
+}
+--call
+http://localhost:8765/order-service/v1/order
+access_denied
